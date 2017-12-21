@@ -16,10 +16,9 @@ pub fn main() {
 			let mut sort_buf = buf.clone();
 			let mut offset = 0;
 			buf.split_whitespace().for_each(|w| {
-				let len = sort_buf.len();
 				let slice = unsafe { sort_buf.as_bytes_mut() };
 				let w_len = w.len();
-				let mut sub_slice = &mut slice[offset..offset + w_len];
+				let sub_slice = &mut slice[offset..offset + w_len];
 				sub_slice.clone_from_slice(w.as_bytes());
 				sub_slice.sort();
 				offset += w_len + 1;
