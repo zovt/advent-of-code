@@ -12,8 +12,9 @@ pub fn main() {
 		.map(|s| s.parse().expect("failed to parse number"))
 		.collect();
 	let mut seen: HashMap<Vec<u64>, u64> = HashMap::new();
+	let mut count = 0;
 	while seen.get(&banks).is_none() {
-		seen.insert(banks.clone(), 0);
+		seen.insert(banks.clone(), count);
 		// find biggest
 		let mut biggest_idx = 0;
 		let mut biggest = 0;
@@ -36,8 +37,8 @@ pub fn main() {
 			n -= 1;
 		}
 
-		seen.values_mut().for_each(|v| *v = *v + 1);
+		count += 1;
 	}
 
-	println!("{}", seen.get(&banks).unwrap());
+	println!("{}", count - seen.get(&banks).unwrap());
 }
