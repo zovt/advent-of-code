@@ -53,7 +53,6 @@ pub fn main() {
 	} else {
 		num
 	};
-	println!("num adj: {}", num);
 	let x = if (num == ring_half + 1) || (num <= ring_min + ring_size - 2) {
 		ring_size - (ring_size + 1) / 2
 	} else {
@@ -66,6 +65,5 @@ pub fn main() {
 	} else {
 		ring_size - (ring_size + 1) / 2
 	};
-	println!("{}, {}", x, y);
 	println!("{}", x.abs() + y.abs());
 }
