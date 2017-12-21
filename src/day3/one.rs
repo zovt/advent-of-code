@@ -40,14 +40,6 @@ pub fn main() {
 	let ring_max = (1 + 2 * ring) * (1 + 2 * ring);
 	let ring_min = (1 + 2 * (ring - 1)) * (1 + 2 * (ring - 1)) + 1;
 	let ring_half = ((ring_max - ring_min) / 2) + ring_min;
-	println!(
-		"ring: {}, ring_size: {}, ring_max: {}, ring_min: {}, ring_half: {}",
-		ring,
-		ring_size,
-		ring_max,
-		ring_min,
-		ring_half,
-	);
 	let num = if (num > ring_half) {
 		num - ring_half + ring_min - 1
 	} else {
